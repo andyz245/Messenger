@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,78 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Autotext" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6v-EZ-aVI">
+                                <rect key="frame" x="20" y="140" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-hu-70u">
+                                <rect key="frame" x="161" y="200" width="92" height="30"/>
+                                <state key="normal" title="老妈，我好了"/>
+                                <connections>
+                                    <action selector="useFirstMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nUK-GL-AVD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-xu-Hru">
+                                <rect key="frame" x="122.5" y="250" width="169" height="30"/>
+                                <state key="normal" title="老妈，我要自己去奶茶店"/>
+                                <connections>
+                                    <action selector="useSecondMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GGu-wn-joy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OoX-jy-V36">
+                                <rect key="frame" x="153" y="300" width="108" height="30"/>
+                                <state key="normal" title="老妈，还没有好"/>
+                                <connections>
+                                    <action selector="useThirdMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lof-oM-uis"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU9-qZ-sAS">
+                                <rect key="frame" x="174" y="79" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnc-tt-xv8">
+                                <rect key="frame" x="178.5" y="380" width="57" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LAE-yF-oKk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OoX-jy-V36" firstAttribute="top" secondItem="f0l-xu-Hru" secondAttribute="bottom" constant="20" id="Adq-n5-qyf"/>
+                            <constraint firstItem="cnc-tt-xv8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BBB-dN-oRO"/>
+                            <constraint firstItem="QU9-qZ-sAS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKW-6d-MvP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6v-EZ-aVI" secondAttribute="trailing" constant="20" id="IhX-kV-YoA"/>
+                            <constraint firstItem="f0l-xu-Hru" firstAttribute="top" secondItem="XVj-hu-70u" secondAttribute="bottom" constant="20" id="Lal-Mq-OK3"/>
+                            <constraint firstItem="OoX-jy-V36" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nk8-9o-Niu"/>
+                            <constraint firstItem="t6v-EZ-aVI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R7N-VD-7Ql"/>
+                            <constraint firstItem="XVj-hu-70u" firstAttribute="top" secondItem="t6v-EZ-aVI" secondAttribute="bottom" constant="30" id="YiT-1J-03F"/>
+                            <constraint firstItem="QU9-qZ-sAS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="cun-x5-XRi"/>
+                            <constraint firstItem="f0l-xu-Hru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iHj-TA-qcl"/>
+                            <constraint firstItem="XVj-hu-70u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nlj-Jq-OXb"/>
+                            <constraint firstItem="cnc-tt-xv8" firstAttribute="top" secondItem="OoX-jy-V36" secondAttribute="bottom" constant="50" id="pI8-bU-vBn"/>
+                            <constraint firstItem="t6v-EZ-aVI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s7J-lg-LPE"/>
+                            <constraint firstItem="t6v-EZ-aVI" firstAttribute="top" secondItem="QU9-qZ-sAS" secondAttribute="bottom" constant="40" id="uKK-fY-uHe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="messageOneButton" destination="XVj-hu-70u" id="gpi-U0-Tzj"/>
+                        <outlet property="messageTextField" destination="t6v-EZ-aVI" id="End-hG-qGH"/>
+                        <outlet property="messageThreeButton" destination="OoX-jy-V36" id="u60-oR-1QV"/>
+                        <outlet property="messageTwoButton" destination="f0l-xu-Hru" id="h0L-Ej-Fwg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
